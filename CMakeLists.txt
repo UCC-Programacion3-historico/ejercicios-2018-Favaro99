@@ -3,13 +3,6 @@ project(Programacion3)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# Habilito Coverage
-SET(COVERAGE OFF CACHE BOOL "Coverage")
-if (COVERAGE)
-target_compile_options(tests PRIVATE --coverage)
-target_link_libraries(tests PRIVATE --coverage)
-endif()
-
 # Agrego todos los test.
 add_subdirectory(test)
 add_subdirectory(U00_Repaso)

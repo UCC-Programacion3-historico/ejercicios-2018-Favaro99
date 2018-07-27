@@ -69,4 +69,12 @@ add_executable(run_test
         U09_Busqueda/Ej05.cpp
 
         )
+
+# Habilito Coverage
+SET(COVERAGE OFF CACHE BOOL "Coverage")
+if (COVERAGE)
+    target_compile_options(run_test PRIVATE --coverage)
+    target_link_libraries(run_test PRIVATE --coverage)
+endif()
+
 target_link_libraries(run_test gtest gtest_main gcov)
