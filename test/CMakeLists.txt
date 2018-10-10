@@ -1,6 +1,6 @@
 project(test)
 
-add_subdirectory(lib/gtest-1.8.0)
+add_subdirectory(lib/gtest-1.8.1)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 add_executable(run_test
