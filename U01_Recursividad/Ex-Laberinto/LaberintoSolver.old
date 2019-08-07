@@ -1,0 +1,77 @@
+#include "LaberintoSolver.h"
+
+
+/**
+ * Función recursiva para solucionar el laberinto
+ * @param x Pocición x de la celda actual
+ * @param y Pocición y de la celda actual
+ * @return true si la celda es parte de la solución, sino false
+ */
+bool LaberintoSolver::solve(unsigned x, unsigned y) {
+
+    m->visitar(x, y);
+    callback(x, y, 1);
+
+    // Base
+    if (x == w - 1 && y == h - 1) {
+        callback(x, y, 2); //Encontre
+        return true;
+    }
+    int celda = m->getData(x, y);
+    // Visito la de arriba
+    if ((celda & 0x01) && y != 0 && !m->esVisitado(x, y - 1)) {
+        bool tmp = solve(x, y - 1);
+        if (tmp) {
+            callback(x, y, 2); //Encontre
+            return true;
+        }
+    }
+
+    // Visito la de abajo
+    if ((celda & 0x02) && y != h - 1 && !m->esVisitado(x, y + 1)) {
+        bool tmp = solve(x, y + 1);
+        if (tmp) {
+            callback(x, y, 2); //Encontre
+            return true;
+        }
+    }
+
+    // Visito la de derecha
+    if ((celda & 0x04) && x != w - 1 && !m->esVisitado(x + 1, y)) {
+        bool tmp = solve(x + 1, y);
+        if (tmp) {
+            callback(x, y, 2); //Encontre
+            return true;
+        }
+    }
+
+    // Visito la de izquierda
+    if ((celda & 0x08) && x != 0 && !m->esVisitado(x - 1, y)) {
+        bool tmp = solve(x - 1, y);
+        if (tmp) {
+            callback(x, y, 2); //Encontre
+            return true;
+        }
+    }
+    callback(x, y, 0); //Encontre
+    return false;
+}
+
+/**
+ * Constructor de LaberintoSolver
+ * @param callback Función callback que hace algo segun si es solución o no la celda actual
+ * @param m Laberinto a solucionar
+ */
+LaberintoSolver::LaberintoSolver(Funcion callback, MazeGenerator *m) {
+    this->callback = callback;
+    this->m = m;
+    this->w = m->getW();
+    this->h = m->getH();
+}
+
+/**
+ * Ejecuta el solver desde la posicion 0 0
+ */
+void LaberintoSolver::run() {
+    solve(0, 0);
+}

@@ -1,4 +1,4 @@
-add_executable(U04-E01Ej-01/main.cpp Cola/Cola.h)
+add_executable(U04-E01 Ej-01/main.cpp Cola/Cola.h)
 
 add_executable(U04-E02 Ej-02/main.cpp)
 
