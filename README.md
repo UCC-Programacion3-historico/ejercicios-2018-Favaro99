@@ -17,3 +17,8 @@ A continuación están los enunciados de cada unidad
 [Unidad7 - Grafos](U07_Grafos)
 [Unidad8 - Ordenamiento](U08_Ordenamiento)
 [Unidad9 - Busqueda](U09_Busqueda)
+
+Actualizar
+----------
+
+git pull https://github.com/UCC-Programacion3/Ejercicios.git master
