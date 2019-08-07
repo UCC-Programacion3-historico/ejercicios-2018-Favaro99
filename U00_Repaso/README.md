@@ -1,60 +1,10 @@
 ## Ejercicio N°1.
 Repaso Programación Orientada a Objetos. Implemente una clase abstracta Geometría y 3 clases hijos; Cuadrado, Triangulo y Circulo. Las 3 deben heredar de la clase Geometría. Cree la clase Color y por contención utilícela en las otras tres.
 
-|             | Geometría (abstracta)     | Cuadrado | Triangulo | Circulo | Color |
-|-------------|---------------------------|----------|-----------|---------|-------|
-| Propiedades |alto<br>ancho<br>color<br> |          |           |         |       |
-| Métodos     |superficie<br>perimetro    | diagonal |           |         |       |
-
-
-**Propiedades:**
-
-* Alto
-* Ancho
-* Color
-
-**Métodos:**
-
-* getSuperficie
-* getPerimetro
-
-###  Cuadrado
-**Propiedades:**
-
-**Métodos:**
-
-* getDiagonal
-
-### Triangulo
-**Propiedades:**
-
-* Angulo
-
-**Métodos:**
-
-* getAngulo
-
-#### Circulo
-**Propiedades:**
-
-* Radio
-
-**Métodos:**
-
-* getRadio
-
-### Color
-
-**Propiedades:**
-
-* Rojo
-* Verde
-* Azul
-
-**Métodos:**
-
-* getColor
-* tenirColor
+|             | Geometría (abstracta)           | Cuadrado    | Triangulo | Circulo | Color                         |
+|-------------|---------------------------------|-------------|-----------|---------|-------------------------------|
+| Propiedades |alto<br>ancho<br>color<br>       |             |angulo     | Radio   | Rojo</br>Verde</br>Azul       |
+| Métodos     |getSuperficie<br>getPerimetro    | getDiagonal |getAngulo  | getRadio| getColor</br> tenirColor      |
 
 ##  Ejercicio N°2. 
 Repaso de uso de Templates en C++. Cree una clase calculadora mediante el uso de Templates, dicha clase debe tener los métodos sumar, restar, dividir, multiplicar que realizaran operaciones en dos propiedades A y B.

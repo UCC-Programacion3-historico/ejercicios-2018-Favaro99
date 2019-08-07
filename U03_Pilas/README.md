@@ -1,7 +1,3 @@
-[![BCH compliance](https://bettercodehub.com/edge/badge/UCC-Programacion3/03-Pilas?branch=master)](https://bettercodehub.com/)
-
-[![Build Status](https://travis-ci.org/UCC-Programacion3/03-Pilas.svg?branch=master)](https://travis-ci.org/UCC-Programacion3/01-Recursividad)
-
 ## Ejercicio N°1.
 Escriba un programa que introduzca una palabra y utilice una pila para imprimir la misma 
 palabra invertida. 

@@ -1,7 +1,3 @@
-[![BCH compliance](https://bettercodehub.com/edge/badge/UCC-Programacion3/04-Colas?branch=master)](https://bettercodehub.com/)
-
-[![Build Status](https://travis-ci.org/UCC-Programacion3/04-Colas.svg?branch=master)](https://travis-ci.org/UCC-Programacion3/01-Recursividad)
-
 ## Ejercicio N°1.
 Diseñe un programa que sea capaz de leer dos colas y mediante un mensaje indicar si son 
 iguales. Nota: los elementos constitutivos de las colas son caracteres. 
