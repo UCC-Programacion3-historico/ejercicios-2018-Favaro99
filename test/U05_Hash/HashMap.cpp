@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "../../U05_Hash/HashMap/HashMap.h"
+#include "../../U06_Hash/HashMap/HashMap.h"
 
 
 using namespace std;

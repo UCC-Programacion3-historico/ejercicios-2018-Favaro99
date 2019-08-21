@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    Calculadora<int, float> miCalc;
+    Calculadora<int> miCalc;
     vector<int> pp;
 
     pp.push_back(3);

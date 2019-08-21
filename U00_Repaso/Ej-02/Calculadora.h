@@ -1,36 +1,39 @@
 #ifndef REPASO_CALCULADORA_H
 #define REPASO_CALCULADORA_H
 
-template<class T, class P>
+template<class T>
 class Calculadora {
 public:
-    T suma(T a, T b);
+    T sumar(T a, T b);
 
-    T resta(T a, T b);
+    T restar(T a, T b);
 
-    P divi(T a, T b);
+    T dividir(T a, T b);
 
-    T multi(T a, T b);
+    T multiplicar(T a, T b);
 };
 
-template<class T, class P>
-T Calculadora<T, P>::suma(T a, T b) {
+template<class T>
+T Calculadora<T>::sumar(T a, T b) {
     return a + b;
 }
 
-template<class T, class P>
-T Calculadora<T, P>::resta(T a, T b) {
+template<class T>
+T Calculadora<T>::restar(T a, T b) {
     return a - b;
 }
 
-template<class T, class P>
-T Calculadora<T, P>::multi(T a, T b) {
+template<class T>
+T Calculadora<T>::multiplicar(T a, T b) {
     return a * b;
 }
 
-template<class T, class P>
-P Calculadora<T, P>::divi(T a, T b) {
-    return (P)a / b;
+template<class T>
+T Calculadora<T>::dividir(T a, T b) {
+    if(b == 0)
+        throw 404;
+
+    return a / b;
 }
 
 #endif //REPASO_CALCULADORA_H
