@@ -38,6 +38,8 @@ public:
     void reemplazar(int pos, T dato);
 
     void vaciar();
+
+    void moverUlti(int pos);
 };
 
 
@@ -282,6 +284,40 @@ void Lista<T>::vaciar() {
         delete aBorrar;
     }
     inicio = nullptr;
+
+}
+
+template<class T>
+void Lista<T>::moverUlti(int pos) {
+    Nodo<T> *aux = inicio, *aMover;
+    int posActual = 0;
+    while (aux != nullptr && posActual < pos - 1) {
+        aux = aux->getSiguiente();
+        posActual++;
+    }
+
+    if (aux != nullptr) {
+        throw 404;
+    }
+
+    if(pos == 0){
+        aMover = inicio;
+        inicio = inicio->getSiguiente();
+        aux = inicio;
+    }else{
+        aMover = aux->getSiguiente();
+        aux->setSiguiente(aMover->getSiguiente());
+    }
+
+
+    aMover->setSiguiente(nullptr);
+
+    while (aux->getSiguiente() != nullptr) {
+        aux = aux->getSiguiente();
+    }
+
+    aux->setSiguiente(aMover);
+
 
 }
 
