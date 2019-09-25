@@ -47,6 +47,9 @@ Cola<T>::Cola() {
 template<class T>
 Cola<T>::~Cola() {
 
+    while (!esVacia())
+        desencolar();
+
 }
 
 
@@ -113,7 +116,7 @@ template<class T>
 T Cola<T>::peek() {
     if (frente == nullptr)
         throw 404;
-    
+
     return frente->getDato();
 }
 
