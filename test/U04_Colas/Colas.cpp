@@ -16,9 +16,9 @@ TEST(U04_Colas, agregoTres_noVacia) {
 }
 
 TEST(U04_Colas, popEnSentidoInverso) {
-    EXPECT_EQ(colaTest->desencolar(), 1);
-    EXPECT_EQ(colaTest->desencolar(), 2);
     EXPECT_EQ(colaTest->desencolar(), 3);
+    EXPECT_EQ(colaTest->desencolar(), 2);
+    EXPECT_EQ(colaTest->desencolar(), 1);
     EXPECT_EQ(colaTest->esVacia(), true);
 }
 
