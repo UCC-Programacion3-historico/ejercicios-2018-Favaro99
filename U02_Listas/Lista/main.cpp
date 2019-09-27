@@ -4,16 +4,21 @@
 
 #include <iostream>
 #include "Lista.h"
+
 using namespace std;
 
-int main(){
+int main() {
     Lista<int> l;
 
-    l.insertarPrimero(3);
-    l.insertarPrimero(2);
-    l.insertarPrimero(1);
+    for (int i = 0; i < 20; ++i) {
+        l.insertarPrimero(i);
 
-    cout << "Hola mindo"<< l.getTamanio() << endl;
+    }
+
+    l.print();
+
+    l.moverPri(19);
+    l.print();
 
 
     return 0;
