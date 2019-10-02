@@ -1,28 +1,45 @@
-#ifndef HASHENTRY_H
-#define HASHENTRY_H
+#ifndef NODOARBOL_H
+#define NODOARBOL_H
 
 template<class T>
 class NodoArbol {
 private:
-
+    T dato;
+    NodoArbol *izq, *der;
 public:
+    NodoArbol(T d) {
+        dato = d;
+        izq = nullptr;
+        der = nullptr;
+    }
+    NodoArbol() {
+        izq = nullptr;
+        der = nullptr;
+    }
 
-//    void print(bool esDerecho, string identacion) {
-//        if (der != NULL) {
-//            der->print(true, identacion + (esDerecho ? "     " : "|    "));
-//        }
-//        cout << identacion;
-//        if (esDerecho) {
-//            cout << " /";
-//        } else {
-//            cout << " \\";
-//        }
-//        cout << "-- ";
-//        cout << dato << endl;
-//        if (izq != NULL) {
-//            izq->print(false, identacion + (esDerecho ? "|    " : "     "));
-//        }
-//    }
+    T getDato() const {
+        return dato;
+    }
+
+    void setDato(T dato) {
+        this->dato = dato;
+    }
+
+    NodoArbol *getIzq() const {
+        return izq;
+    }
+
+    void setIzq(NodoArbol *izq) {
+        NodoArbol::izq = izq;
+    }
+
+    NodoArbol *getDer() const {
+        return der;
+    }
+
+    void setDer(NodoArbol *der) {
+        NodoArbol::der = der;
+    }
 };
 
 #endif //HASHENTRY_H

@@ -350,7 +350,6 @@ void Lista<T>::moverPri(T dato) {
     aMover->setSiguiente(inicio);
 
     inicio = aMover;
-
 }
 
 template<class T>
