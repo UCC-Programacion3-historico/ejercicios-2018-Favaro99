@@ -230,9 +230,14 @@ NodoArbol<T> *ArbolBinario<T>::remove(T dato, NodoArbol<T> *r) {
             return aux;
         } else if (r->getIzq() != nullptr && r->getDer() != nullptr) {
             bool enc;
-            aux = buscarMax(r->getIzq(), &enc);
-            aux->setDer(r->getDer());
-            aux->setIzq(r->getIzq());
+            if(r->getIzq()->getDer()!= nullptr){
+                aux = buscarMax(r->getIzq(), &enc);
+                aux->setDer(r->getDer());
+                aux->setIzq(r->getIzq());
+            }else{
+                aux = r->getIzq();
+                r->getIzq()->setDer(r->getDer());
+            }
             delete r;
             return aux;
         }
@@ -265,24 +270,24 @@ NodoArbol<T> *ArbolBinario<T>::buscarMax(NodoArbol<T> *r, bool *encontre) {
 
 }
 
-template<class T>
-void ArbolBinario<T>::print(bool esDerecho, std::string identacion, NodoArbol<T> *r) {
-    if (r->getDer() != nullptr) {
-        print(true, identacion + (esDerecho ? "     " : "|    "), r->getDer());
-    }
-    std::cout << identacion;
-    if (esDerecho) {
-        std::cout << " /";
-    } else {
-        std::cout << " \\";
-    }
-    std::cout << "-- ";
-    std::cout << r->getDato() << std::endl;
-    if (r->getIzq() != NULL) {
-        print(false, identacion + (esDerecho ? "|    " : "     "), r->getIzq());
-    }
-}
-
+//template<class T>
+//void ArbolBinario<T>::print(bool esDerecho, std::string identacion, NodoArbol<T> *r) {
+//    if (r->getDer() != nullptr) {
+//        print(true, identacion + (esDerecho ? "     " : "|    "), r->getDer());
+//    }
+//    std::cout << identacion;
+//    if (esDerecho) {
+//        std::cout << " /";
+//    } else {
+//        std::cout << " \\";
+//    }
+//    std::cout << "-- ";
+//    std::cout << r->getDato() << std::endl;
+//    if (r->getIzq() != NULL) {
+//        print(false, identacion + (esDerecho ? "|    " : "     "), r->getIzq());
+//    }
+//}
+//
 
 
 #endif //HASHMAP_H
