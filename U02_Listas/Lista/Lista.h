@@ -245,8 +245,6 @@ T Lista<T>::getDato(int pos) {
         throw 404;
 
     return aux->getDato();
-
-
 }
 
 
@@ -269,8 +267,6 @@ void Lista<T>::reemplazar(int pos, T dato) {
         throw 404;
 
     aux->setDato(dato);
-
-
 }
 
 
@@ -288,7 +284,6 @@ void Lista<T>::vaciar() {
         delete aBorrar;
     }
     inicio = nullptr;
-
 }
 
 template<class T>

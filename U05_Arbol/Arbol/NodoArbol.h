@@ -1,5 +1,5 @@
-#ifndef HASHENTRY_H
-#define HASHENTRY_H
+#ifndef NODOARBOL_H
+#define NODOARBOL_H
 
 template<class T>
 class NodoArbol {
@@ -25,4 +25,4 @@ public:
 //    }
 };
 
-#endif //HASHENTRY_H
+#endif //NODOARBOL_H

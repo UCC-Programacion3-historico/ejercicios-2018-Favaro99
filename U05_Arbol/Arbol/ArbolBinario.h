@@ -1,12 +1,12 @@
-#ifndef HASHMAP_H
-#define HASHMAP_H
+#ifndef ARBOLBINARIO_H
+#define ARBOLBINARIO_H
 
 #include "NodoArbol.h"
 
 template<class T>
 class ArbolBinario {
 private:
-
+    NodoArbol<T> *raiz;
 public:
     ArbolBinario();
 
@@ -131,4 +131,4 @@ void ArbolBinario<T>::print() {
 }
 
 
-#endif //HASHMAP_H
+#endif //ARBOLBINARIO_H

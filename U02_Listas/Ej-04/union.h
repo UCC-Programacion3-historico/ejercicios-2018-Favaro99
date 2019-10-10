@@ -5,9 +5,20 @@
 
 
 template<class T>
-Lista<T> *unir(Lista<T> &lisA, Lista<T> &lisB) {
-    return new Lista<T>();
+Lista<int> unir(Lista<T> &lisA, Lista<T> &lisB) {
+    Lista<T> lisC;
+
+    for(int i=0; i<lisA.getTamanio(); i++){
+        lisC.insertar(i,lisA.getDato(i));
+    }
+
+    for(int i=0; i<lisB.getTamanio(); i++){
+        lisC.insertar(lisC.getTamanio(),lisB.getDato(i));
+    }
+
+    return lisC;
 }
+
 
 
 #endif //UNION_H

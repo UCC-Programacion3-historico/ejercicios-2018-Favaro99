@@ -4,19 +4,18 @@
 using namespace std;
 
 int main() {
-    char arr[100];
-    Pila<char> p;
+  Pila<char> p;
+  char arr[100];
 
-    cout << "Introduzca una palabra" << endl;
-    cin >> arr;
+  cout<<"Ingrese una palabra: ";
+  cin>>arr;
 
-    for (int i = 0; arr[i] != '\0'; i++) {
-        p.push(arr[i]);
-    }
+  for(int i=0; arr[i] != '\0' ; i++) {
+      p.push(arr[i]);
+  }
 
-    while (!p.esVacia()) {
-        cout << p.pop();
-    }
+  while(!p.esVacia()){
+      cout<<p.pop();
+  }
 
-    return 0;
 }
