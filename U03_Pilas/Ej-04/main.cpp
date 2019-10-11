@@ -13,10 +13,20 @@ int main() {
     for(int i=0; arr[i] != '\0'; i++) {
         if (arr[i] == '(' || arr[i] == '[' || arr[i] == '{')
             p1.push(arr[i]);
-        if(arr[i] == ')' || arr[i] == '}' || arr[i] == ']'){
-            p1.pop();
+        else if(arr[i] == ')'){
+            if(p1.peek() == '(')
+                p1.pop();
+        }
+        else if(arr[i] == ']'){
+            if(p1.peek() == '[')
+                p1.pop();
+        }
+        else if(arr[i] == '}'){
+            if(p1.peek() == '{')
+                p1.pop();
         }
     }
+
 
     if(p1.esVacia()){
         cout<<"Los parentesis estan balanceados"<<endl;
