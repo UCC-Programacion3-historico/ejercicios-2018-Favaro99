@@ -5,15 +5,16 @@
 
 
 template<class T>
-Lista<int> unir(Lista<T> &lisA, Lista<T> &lisB) {
-    Lista<T> lisC;
+Lista<int> *unir(Lista<T> &lisA, Lista<T> &lisB) {
+
+    auto *lisC = new Lista<T>();
 
     for(int i=0; i<lisA.getTamanio(); i++){
-        lisC.insertar(i,lisA.getDato(i));
+        lisC->insertarUltimo(lisA.getDato(i));
     }
 
     for(int i=0; i<lisB.getTamanio(); i++){
-        lisC.insertar(lisC.getTamanio(),lisB.getDato(i));
+        lisC->insertarUltimo(lisB.getDato(i));
     }
 
     return lisC;

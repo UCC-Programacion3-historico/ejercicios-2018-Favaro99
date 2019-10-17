@@ -21,7 +21,8 @@ int main() {
         l2.insertar(i,e);
     }
 
-    Lista<int> l3 = unir(l1,l2);
+    Lista<int> *l3;
+    l3 = unir(l1,l2);
 
     l1.print();
     cout<<endl;
@@ -29,5 +30,5 @@ int main() {
     l2.print();
     cout<<endl;
 
-    l3.print();
+    l3->print();
 }

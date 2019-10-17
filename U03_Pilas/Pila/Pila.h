@@ -24,6 +24,9 @@ public:
     T peek();
 
     bool esVacia();
+
+    void insertAfter2(T oldValue, T n, T newValue);
+
 };
 
 
@@ -99,6 +102,13 @@ T Pila<T>::peek() {
 template<class T>
 bool Pila<T>::esVacia() {
     return tope == nullptr;
+}
+
+template<class T>
+void Pila<T>::insertAfter2(T oldValue, T n, T newValue) {
+    Nodo<T> *aux = tope;
+
+
 }
 
 #endif //LISTA_H

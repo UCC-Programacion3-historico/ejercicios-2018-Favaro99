@@ -1,4 +1,4 @@
-add_executable(U02-E01 Ej-01/main.cpp Lista/Lista.h Ej-01/fnInvierte.h)
+add_executable(U02-E01 Ej-01/main.cpp Ej-01/fnInvierte.h)
 
 add_executable(U02-E02 Ej-02/main.cpp)
 
