@@ -1,4 +1,4 @@
-add_executable(U05-E01 Ej-01/main.cpp Arbol/ArbolBinario.h)
+add_executable(U05-E01 Ej-01/main.cpp Arbol/ArbolBinario.h Arbol/NodoArbol.h)
 
 add_executable(U05-E02 Ej-02/main.cpp)
 

@@ -7,19 +7,11 @@
 
 using namespace std;
 
-int main() {
-    Lista<int> l;
+int main(int argc, char *argv[]) {
+    cout << "Argumentos: "<< endl;
 
-    for (int i = 0; i < 20; ++i) {
-        l.insertarPrimero(i);
-
+    for (int i = 0; i < argc; ++i) {
+        cout << i << ": " << argv[i] << endl;
     }
-
-    l.print();
-
-    l.moverPri(19);
-    l.print();
-
-
     return 0;
 }

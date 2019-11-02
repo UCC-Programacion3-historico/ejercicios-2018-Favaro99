@@ -44,8 +44,6 @@ public:
     void moverPri(T dato);
 
     void print();
-
-    void alFinal(T dato);
 };
 
 
@@ -247,6 +245,8 @@ T Lista<T>::getDato(int pos) {
         throw 404;
 
     return aux->getDato();
+
+
 }
 
 
@@ -269,6 +269,8 @@ void Lista<T>::reemplazar(int pos, T dato) {
         throw 404;
 
     aux->setDato(dato);
+
+
 }
 
 
@@ -286,6 +288,7 @@ void Lista<T>::vaciar() {
         delete aBorrar;
     }
     inicio = nullptr;
+
 }
 
 template<class T>
@@ -358,48 +361,6 @@ void Lista<T>::print() {
         aux = aux->getSiguiente();
     }
     std::cout << "NULL" << std::endl;
-}
-
-template<class T>
-void Lista<T>::alFinal(T dato) {
-    Nodo<T> *aux = inicio, *aMover;
-
-    if(aux == nullptr)
-        throw 404;
-
-
-    //Si el dato esta al principio
-    if(aux->getDato() == dato){
-        aMover = inicio;
-        aux = aux->getSiguiente();
-        inicio = aux;
-        aMover->setSiguiente(nullptr);
-        while(aux->getSiguiente() != nullptr){
-            aux = aux->getSiguiente();
-        }
-        aux->setSiguiente(aMover);
-        return;
-    }
-
-    //Buscamos el dato
-    while(aux->getSiguiente() != nullptr && aux->getSiguiente()->getDato() != dato){
-        aux = aux->getSiguiente();
-    }
-
-    //SI el dato esta en la ultima posicion
-    if(aux->getSiguiente() == nullptr && aux->getDato() == dato){
-        return;
-    }
-
-    aMover = aux->getSiguiente();
-    aux->setSiguiente(aMover->getSiguiente());
-    aMover->setSiguiente(nullptr);
-
-    while(aux->getSiguiente() != nullptr){
-        aux = aux->getSiguiente();
-    }
-
-    aux->setSiguiente(aMover);
 }
 
 

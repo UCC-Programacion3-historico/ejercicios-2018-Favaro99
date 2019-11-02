@@ -2,7 +2,6 @@
 #define HASHMAP_H
 
 #include "HashEntry.h"
-#include <map>
 
 template<class K, class T>
 class HashMap {
@@ -11,7 +10,7 @@ private:
 
     unsigned int (*hashFuncP)(K clave);
 
-    std::map<K, T> **tabla;
+    HashEntry<K, T> **tabla;
     unsigned int tamanio;
 
 
@@ -36,10 +35,11 @@ public:
 
 template<class K, class T>
 HashMap<K, T>::HashMap(unsigned int k) {
+    tabla = new HashEntry<K, T> *[k];
     tamanio = k;
     hashFuncP = hashFunc;
     for (int i = 0; i < tamanio; ++i) {
-        tabla[i] = new std::map<K, T>;
+        tabla[i] = nullptr;
     }
 }
 
@@ -52,19 +52,18 @@ template<class K, class T>
 T HashMap<K, T>::get(K clave) {
     unsigned int idx;
     idx = hashFuncP(clave) % tamanio;
-    auto it = tabla[idx]->find(clave);
-    if (it == tabla[idx]->end()) {
+    if (tabla[idx] == nullptr || tabla[idx]->getClave() != clave) {
         throw 404;
     }
-    return it->second;
+    return tabla[idx]->getDato();
 }
 
 template<class K, class T>
 void HashMap<K, T>::put(K clave, T valor) {
     unsigned int idx;
     idx = hashFuncP(clave) % tamanio;
-    if (tabla[idx]->find(clave) == tabla[idx]->end())
-        tabla[idx]->insert(make_pair(clave, valor));
+    if (tabla[idx] == nullptr)
+        tabla[idx] = new HashEntry<K, T>(valor, clave);
     else
         throw 404;
 }
@@ -73,11 +72,11 @@ template<class K, class T>
 void HashMap<K, T>::remove(K clave) {
     unsigned int idx;
     idx = hashFuncP(clave) % tamanio;
-    auto it = tabla[idx]->find(clave);
-    if (it == tabla[idx]->end()) {
+    if (tabla[idx] == nullptr || tabla[idx]->getClave() != clave) {
         throw 404;
     }
-    tabla[idx]->erase(it);
+    delete tabla[idx];
+    tabla[idx] = nullptr;
 }
 
 template<class K, class T>
@@ -96,26 +95,26 @@ unsigned int HashMap<K, T>::hashFunc(K clave) {
 
 template<class K, class T>
 HashMap<K, T>::HashMap(unsigned int k, unsigned int (*fp)(K)) {
+    tabla = new HashEntry<K, T> *[k];
     tamanio = k;
     hashFuncP = fp;
     for (int i = 0; i < tamanio; ++i) {
-        tabla[i] = new std::map<K, T>;
+        tabla[i] = nullptr;
     }
-
 }
-//
-//template<class K, class T>
-//void HashMap<K, T>::print() {
-//    for (int i = 0; i < tamanio; ++i) {
-//
-//        std::cout << i << "\t";
-//        if (tabla[i] != nullptr)
-//            std::cout << tabla[i]->getDato();
-//
-//        std::cout << std::endl;
-//
-//    }
-//}
+
+template<class K, class T>
+void HashMap<K, T>::print() {
+    for (int i = 0; i < tamanio; ++i) {
+
+        std::cout << i << "\t";
+        if (tabla[i] != nullptr)
+            std::cout << tabla[i]->getDato();
+
+        std::cout << std::endl;
+
+    }
+}
 
 
 #endif //HASHMAP_H

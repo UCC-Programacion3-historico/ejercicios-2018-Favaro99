@@ -25,11 +25,7 @@ public:
 
     bool esVacia();
 
-<<<<<<< HEAD
-    void insertAfter2(T oldValue, T n, T newValue);
-=======
     void insertAfter2(T oldValue, int n, T newValue);
->>>>>>> 5a132da0214c8278997f00df8e27969981055393
 
 };
 
@@ -109,18 +105,12 @@ bool Pila<T>::esVacia() {
 }
 
 template<class T>
-<<<<<<< HEAD
-void Pila<T>::insertAfter2(T oldValue, T n, T newValue) {
-    Nodo<T> *aux = tope;
-
-=======
 void Pila<T>::insertAfter2(T oldValue, int n, T newValue) {
     Nodo<T> *aux = tope;
 
     while(aux!= nullptr)
         aux = aux->getSiguiente();
 
->>>>>>> 5a132da0214c8278997f00df8e27969981055393
 
 }
 
