@@ -54,6 +54,5 @@ int main() {
 
     a.print();
 
-    std::cout << "d 05/01\n" << std::endl;
-    return 0;
+    
 }

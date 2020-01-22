@@ -1,6 +1,10 @@
 #include <iostream>
+#include "../Arbol/ArbolBinario.h"
+
+using namespace std;
+
 
 int main() {
-    std::cout << "Ejercicio 05/02\n" << std::endl;
-    return 0;
+    ArbolBinario<int> arbol;
+
 }

@@ -125,7 +125,7 @@ void ArbolBinario<T>::preorder() {
  */
 template<class T>
 void ArbolBinario<T>::inorder() {
-
+    inorder(raiz);
 }
 
 
@@ -134,7 +134,7 @@ void ArbolBinario<T>::inorder() {
  */
 template<class T>
 void ArbolBinario<T>::postorder() {
-
+    postorden(raiz);
 }
 
 
